@@ -1,0 +1,50 @@
+   <html>
+    
+    <head>
+        <title>title</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        {% load staticfiles %}
+        <script src="{% static "lib/modernizr.min.js" %}"></script>
+        <script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=false&libraries=places"></script> 
+        <script src=  "{% static "lib/jquery.min.js" %}"></script>
+        <script src=  "{% static "lib/jquery.mobile.min.js" %}"></script>
+        <script src=  "{% static "lib/jquery.ui.autocomplete.min.js" %}"></script>
+        <script src=  "{% static "lib/demo.js" %}"></script>
+        <script src=  "{% static "lib/jquery.ui.map.js" %}"></script>
+        <script src=  "{% static "lib/jquery.ui.map.services.js" %}"></script>
+        <script src=  "{% static "lib/jquery.ui.map.extensions.js" %}"></script>
+        <script src=  "{% static "lib/jqm-datebox.core.js" %}"></script>
+        <script src=  "{% static "lib/jqm-datebox.mode.slidebox.js" %}"></script>
+        
+        <link href=   "{% static "src/css/jquery.mobile.css" %}" rel="stylesheet">
+        <link href= "{% static "src/css/mobile.css" %}"  rel="stylesheet">
+  			<link href= "{% static "src/css/jqm-datebox.css" %}"  rel="stylesheet">
+    </head>
+    
+    <body>
+    
+       <div id="mymessage" data-role="page" >
+			<div data-role="header">
+				<h1>Show the Messages for You</h1>
+				<a data-rel="back">Back</a>
+			</div>
+			<div data-role="content">	
+			 {% for rec in allrec %}
+			
+				<div class="ui-bar-c ui-corner-all ui-shadow" style="padding:1em;">
+					
+					<p>{{ rec.created }} </p>
+					<p>{{ rec.msg_email }}  </p>
+					
+		     	<p>{{ rec.msg_phone }}  </p>
+		     	<p>{{ rec.msg_cont}}  </p>
+			
+				</div>
+			  {% endfor %}
+
+			</div>
+		</div>
+		    </body>
+		    
+		    </html>
+		

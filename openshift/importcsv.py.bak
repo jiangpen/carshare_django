@@ -1,0 +1,14 @@
+import csv, os
+from from carshare.models import au_suburb
+dataReader = csv.reader(open("Australian_Post_Codes_Lat_Lon.csv"), delimiter=',', quotechar='"')
+for row in dataReader:
+	if row[0]!= "postcode" :
+		my_au=au_suburb();
+		my_au.postcode=row[0]
+		my_au.suburb=row[1]
+		my_au.state=row[2]
+		my_au.dc=row[3]
+		my_au.type=row[4]
+		my_au.lat=row[5]
+		my_au.lon=row[6]
+		my_au.save()

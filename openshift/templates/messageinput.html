@@ -1,0 +1,38 @@
+		     <div data-role="dialog" id="page6" >
+
+            <div data-role="header">
+                <h1>Trip Detail</h1>
+            </div>
+            <div data-role="content">
+                <ul data-role="listview" data-inset="true">
+              
+                    <li> Date:	{{ allrec.created }}  		     	</li>
+                    <li> From: {{ allrec.from_name }}      </li>
+                    <li> To  :  {{ allrec.to_name }}     	</li>
+                    
+                    <li>	  {{ allrec.num_seat }} seats available    </li>
+                
+             
+                </ul>
+                <form action=/put_msg method=get>
+                 <input id="rec_id" name="rec_id" type="hidden" value="{{ allrec.rec_id }}" />
+                 {% if not passed %}
+                <label for="e_mail">email</label>
+						    <input id="e_mail" name="e_mail" class="ui-bar-c" type="text" placeholder="your email" />
+						    <label for="e_phone">Phone</label>
+						    <input id="e_phone" name="e_phone" class="ui-bar-c" type="text" placeholder="your phone" />
+						    {% else %}
+						    <input id="e_mail" name="e_mail" class="ui-bar-c" type="hidden" value="{{ userinfo.email }}"  />
+						    <input id="e_phone" name="e_phone" class="ui-bar-c" type="hidden" value="{{ userinfo.email }}"   />
+						      {% endif %}
+						    <label for="e_content">Message to Poster</label>
+						 
+						    <textarea id="e_content" name="e_content" class="ui-bar-c" type="text" placeholder="put your message here"></textarea>
+          
+                
+						    	<button data-role="submit" data-icon="search">Send Message to Poster</button>
+                 </form>
+            </div>
+            {% include "footer.html" %}
+        </div>  
+         

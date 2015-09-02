@@ -1,0 +1,60 @@
+﻿<!DOCTYPE html> 
+<html lang="en"> 
+<head> 
+ {% load staticfiles %}
+
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>jQueryMobile - DateBox Demos</title>
+        {% load staticfiles %}
+        
+        
+
+             <link href=   "{% static "src/css/jquery.mobile-1.4.0.css" %}" rel="stylesheet">
+        <link href= "{% static "src/css/mobile.css" %}"  rel="stylesheet">
+   <link href= "{% static "src/css/jqm-datebox.css" %}"  rel="stylesheet">
+
+        <script src=  "{% static "lib/jquery.min.js" %}"></script>
+        <script src=  "{% static "lib/jquery.mobile-1.4.0.min.js" %}"></script>
+
+     
+ 
+               <script src=  "{% static "lib/jqm-datebox.core.js" %}"></script>
+               <script src=  "{% static "lib/jqm-datebox.mode.slidebox.js" %}"></script>
+
+	<script type="text/javascript">
+	$(document).ready(function(){  
+	
+	$("#myMessage").show().delay(2000).fadeOut();
+	
+	
+	})
+	    </script>
+	    
+</head>
+<body>
+
+         <div id="directions_map" data-role="page" >
+         
+            <div data-role="header">
+                <h1>About ShareCar</h1>
+            </div>
+     <div id="myMessage"> Saved Successfully </div>
+
+
+            <div data-role="content">
+             
+               Find People To Share Transport and Costs<p>
+               Copy Right, JiangPeng, 2014. <p>Contact us at JiangPen@gmail.com
+               	<label for="mode4">SlideBox</label>
+					<input name="mode4" id="mode4" type="text" data-role="datebox" data-options='{"mode":"slidebox", "useNewStyle":true}' />
+            </div>
+            
+				
+			 
+
+			
+      
+		
+
+</body>
+</html>
